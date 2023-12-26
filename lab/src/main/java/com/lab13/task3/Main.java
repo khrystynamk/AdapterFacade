@@ -8,6 +8,7 @@ public class Main {
             System.out.println("Name: " + companyInfo.getName());
             System.out.println("Description: " + companyInfo.getDescription());
             System.out.println("Logo: " + companyInfo.getLogo());
+            
         } catch (Exception e){
             System.out.println("Something went wrong: couldn't get info about the company." + e.toString());
         }

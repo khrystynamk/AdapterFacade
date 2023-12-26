@@ -7,7 +7,11 @@ public class Facade {
         JSONObject jsonObject = reader.fetchCompanyInfo(website);
         String name = jsonObject.optString("name");
         String description = jsonObject.optString("description");
-        String logo = jsonObject.optString("logos");
+        String logo = jsonObject.getJSONArray("logos")
+                                .getJSONObject(0)
+                                .getJSONArray("formats")
+                                .getJSONObject(0)
+                                .getString("src");
         return Company.builder()
                     .name(name)
                     .description(description)
